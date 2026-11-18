@@ -1147,7 +1147,7 @@ above.
 
 | Command | Purpose | Example |
 | --- | --- | --- |
-| `run TASK_DIR` | Run a Harbor task locally, or submit it to a cluster when `--cluster` is set. | `rsi-harness run ../rsi-tasks/minference-sparse-prefill --agent codex --agent-auth local --model gpt-6-astra --reasoning-effort max --gpus 0` |
+| `run TASK_DIR` | Run a Harbor task locally, or submit it to a cluster when `--cluster` is set. | `rsi-harness run /absolute/path/to/harbor-task --agent codex --agent-auth local --model gpt-6-astra --reasoning-effort max` |
 | `visualize` | Serve the run visualizer. | `rsi-harness visualize` |
 | `serve` | Serve the task intake API for task brewers ([docs](docs/task-intake.md)). | `RSI_INTAKE_TOKEN=... rsi-harness serve --port 7472` |
 | `recover [RUN_ID]` | Recover one interrupted run, or all unfinished runs when `RUN_ID` is omitted. | `rsi-harness recover RUN_ID` |

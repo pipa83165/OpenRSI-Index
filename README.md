@@ -42,5 +42,6 @@ uv run --project RSI-Harness python local-research/research.py run '<实验目�
 
 - [`local-research/`](local-research/README.md)：本地命令、对话 Prompt、CPU 示例和测试。
 - [`RSI-Harness/`](RSI-Harness/)：保留原评测引擎，负责容器、Agent、提交、评分和结果。
-- [`rsi-tasks/`](rsi-tasks/)：保留原公开题库。你的实验和运行记录留在各自的本地目录。
-- [原版 OpenRSI Index 介绍](README.upstream.md)和[公开贡献流程](CONTRIBUTING.md)：供参考，不是本地使用的前置步骤。
+- 原公开题库、投稿和发布流程留在[上游 OpenRSI Index](https://github.com/OpenRSI-Foundation/OpenRSI-Index)，不放在这个分支。你的实验和运行记录留在各自的本地目录。
+
+本 fork 的 `main` 跟踪官方上游；请在 `local-research` 分支使用本地版。升级引擎时先比较上游的 `RSI-Harness/` 改动，再选择同步和验收，不把原投稿流程合回来。

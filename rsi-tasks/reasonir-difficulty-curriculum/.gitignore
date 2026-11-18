@@ -1,5 +1,0 @@
-# prepare_eval_assets.py downloads every locked evaluation payload; Git tracks only the manifest.
-/tests/assets/*
-!/tests/assets/manifest.json
-# Its staging folders, including any left by an interrupted run.
-/.prepare-eval-assets*

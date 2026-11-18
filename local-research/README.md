@@ -27,14 +27,14 @@ RSI-Harness without carrying over the task author's conversation.
 
 ## Where files live
 
-This workflow adds `local-research/` and an entry in the root README. It does
-not replace the existing Harness, published tasks, or GitHub contribution flow.
+The `local-research` branch keeps the existing Harness and its regression
+checks, without the public task collection or GitHub contribution automation.
+Those remain available from [upstream OpenRSI Index](https://github.com/OpenRSI-Foundation/OpenRSI-Index).
 
 ```text
 OpenRSI-Index/
-├── RSI-Harness/                           # unchanged runtime
-├── rsi-tasks/                             # unchanged published tasks
-├── .agents/skills/ and .github/workflows/  # unchanged contribution flow
+├── RSI-Harness/                           # original runtime and tests
+├── .github/workflows/                     # Harness regression checks only
 └── local-research/                        # new local workflow
     ├── README.md
     ├── research.py                        # proposal through run
@@ -60,8 +60,8 @@ my-research/
 └── .harness-data/         # local Harness runtime data
 ```
 
-These are local workspace outputs, not additions to the published
-`rsi-tasks/` catalog. Keep private experiment files out of commits.
+These are local workspace outputs, not additions to the upstream public task
+catalog. Keep private experiment files out of commits.
 
 ## Setup
 
