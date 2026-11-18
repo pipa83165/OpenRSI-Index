@@ -1,0 +1,15 @@
+schema_version = 1
+slug = "cpu-sequence"
+title = "CPU sequence smoke task"
+question = "Can a candidate implement the specified Fibonacci CLI at all supported inputs?"
+baseline = "The Work starter prints the input unchanged."
+candidate_paths = ["/workspace/sequence.py"]
+evaluation = "Judge invokes a fresh isolated-mode Python subprocess per held-back case with a short timeout and compares the exact stdout bytes."
+success_criteria = "All held-back Fibonacci outputs must match exactly, including one trailing newline, for reward 1. An incorrect candidate receives reward 0."
+primary_reward = "reward"
+score_direction = "maximize"
+agent_timeout_sec = 300
+verifier_timeout_sec = 30
+max_submissions = 2
+expected_oracle = 1.0
+expected_negative = 0.0

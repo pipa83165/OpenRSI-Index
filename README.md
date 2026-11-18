@@ -97,6 +97,8 @@ The [SGLang-Omni task collection](https://github.com/OpenRSI-Foundation/OpenRSI-
 
 [RSI-Harness](RSI-Harness/) powers OpenRSI Index for ultra-long-horizon RSI runs, natively supporting [Harbor-format tasks](rsi-tasks) from single-node local Docker to multi-node clusters. See its [README](RSI-Harness/README.md) to run a task.
 
+For a local-only path from a research proposal to an RSI-Harness run, see [Local research workflow](local-research/README.md).
+
 ## 🤝 Contributors
 
 We are still actively expanding the team. We really appreciate the efforts of all our excellent members.

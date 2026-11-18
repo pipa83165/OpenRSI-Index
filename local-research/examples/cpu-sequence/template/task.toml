@@ -1,0 +1,32 @@
+schema_version = "1.4"
+
+[task]
+name = "rsi/cpu-sequence"
+version = "1.0.0"
+description = "Repair a tiny deterministic Fibonacci CLI to smoke-test a local research loop."
+
+[metadata.rsi_harness.verifier]
+gpus = 0
+clean_image = true
+max_submissions = 2
+
+[environment]
+os = "linux"
+cpus = 1
+memory_mb = 256
+storage_mb = 1024
+build_timeout_sec = 300
+workdir = "/workspace"
+gpus = 0
+network_mode = "no-network"
+
+[agent]
+user = "1000:1000"
+timeout_sec = 300
+network_mode = "no-network"
+
+[verifier]
+user = "root"
+timeout_sec = 30
+network_mode = "no-network"
+environment_mode = "shared"
