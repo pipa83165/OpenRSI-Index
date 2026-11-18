@@ -1,226 +1,46 @@
-<p align="center">
-  <img src="assets/figures/openrsi-index-header-starry.svg" alt="OpenRSI Index" width="567">
-</p>
+# OpenRSI Local Research
 
-<div align="center">
-  <a href="https://index.openrsi.foundation/index.html"><img src="https://img.shields.io/badge/Website-4F86D8?style=for-the-badge&logo=googleearth&logoColor=white" alt="Website"></a>&nbsp;
-  <!-- <a href="https://github.com/OpenRSI-Foundation/OpenRSI-Index"><img src="https://img.shields.io/badge/GitHub-35434D?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>&nbsp; -->
-  <a href="https://x.com/OpenRSI/status/2102831770458890626"><img src="https://img.shields.io/badge/Twitter-35434D?style=for-the-badge&logo=X&logoColor=white" alt="X"></a>&nbsp;
-  <a href="#-news"><img src="https://img.shields.io/badge/News-7357CF?style=for-the-badge&logo=rss&logoColor=white" alt="News"></a>&nbsp;
-  <a href="https://github.com/OpenRSI-Foundation/OpenRSI-Index/blob/main/CONTRIBUTING.md"><img src="assets/figures/contribution-call.svg" alt="Contribution Call"></a>&nbsp;
-  <a href="https://index.openrsi.foundation/logs/"><img src="https://img.shields.io/badge/RSI%20Logs-14967F?style=for-the-badge&logo=google-sheets&logoColor=white" alt="RSI Logs"></a>&nbsp;
-  <a href="assets/figures/wechat.jpg"><img src="https://img.shields.io/badge/WeChat-24A36F?style=for-the-badge&logo=wechat&logoColor=white" alt="WeChat Group"></a>&nbsp;
-  <a href="https://discord.gg/3EG8Qhmfsa"><img src="https://img.shields.io/badge/Discord-6674D8?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"></a>
-</div>
+在自己的机器上把研究想法变成可运行的实验：**提案 → 独立评审 → 构建 Harbor 任务 → 正负对照验收 → RSI-Harness 运行**。本地工作流不提交 GitHub Discussion，不依赖原版的私有任务构建服务，也不上传实验轨迹。
 
-## ✨ News
+## 从一个想法开始
 
-- **[2026-11-16] OpenPhysics Bench:** Exciting progress on **60+ open physics problems**—expert reviewers wanted!
-- **[2026-11-13]** At [SGLang Summit 2026](https://www.sglang.io/summit), we presented **Scaling RSI for AI Infra**. [[Slide]](https://docs.google.com/presentation/d/1ODcBjqT9sl0NRa7SdtV4rwULmMZI71xx/edit)
-- **[2026-11-09]** New [OpenRSI x SGLang-omni blog](https://index.openrsi.foundation/blog/2026/openrsi-sglang-omni/): RSI for multimodal serving, with **14 merged PRs** and **up to 326.5% higher H100 non-streaming throughput**.
-- **[2026-11-06]** [RSI Harness](RSI-Harness/) supports **7 coding agents**, **Docker/Apptainer/SingularityCE containers**, and deployment on **standalone GPU servers and Slurm/LSF/Kubernetes/PBS/PJM clusters**.
-- **[2026-11-05]** **140+ [RSI tasks](https://github.com/OpenRSI-Foundation/OpenRSI-Index/discussions) assigned**, spanning pre-training, post-training, multimodal learning, robotics, agents, AI systems, and scientific ML.
+用 Codex 或你常用的代码 Agent 打开**这个 checkout**。每一阶段按下面的 Prompt 新开一个对话。把 `<实验目录>` 换成同一个实际路径；建议把实验放在 checkout 外，免得误提交。
 
-[All news →](NEWS.md)
-
-## 📣 Call for Contributors
-
-**We're actively looking for contributors to add new, challenging tasks.** Our dedicated **agent-native RSI-Anything pipeline** helps you create a new task in **an hour or less**—bring the idea, and our agents handle the rest. See **[CONTRIBUTING.md](CONTRIBUTING.md)** for a step-by-step guide to creating and submitting tasks. **Contributors with accepted tasks will be invited as co-authors.** Have fun! 😀
-
-Clone the repository:
-
-```bash
-git clone https://github.com/OpenRSI-Foundation/OpenRSI-Index.git
-cd OpenRSI-Index
-```
-
-Open Codex or Claude Code (app or CLI), start a fresh session, and paste:
+### 1. 提案
 
 ```text
-Use the proposal-agent skill at .agents/skills/proposal-agent/SKILL.md in my local OpenRSI-Index repository. Locate the repository if needed, then follow the skill to complete setup and guide me step by step through creating and submitting an RSI proposal.
+请定位这个 OpenRSI Local Research checkout，阅读 local-research/PROMPTS.md 的「1. 提案」和 local-research/README.md。按本地提案流程引导我，把研究想法写成 <实验目录>/proposal.toml。先问我想验证什么；不提交远端，不执行实验。
 ```
 
-**Any questions?** Contact us at [yuetaili@uw.edu](mailto:yuetaili@uw.edu), [zhuofengli12345@gmail.com](mailto:zhuofengli12345@gmail.com), or [yfeng42@uw.edu](mailto:yfeng42@uw.edu).
+### 2. 独立评审
 
-## 🔥 Call for Compute
+提案写好后，另开一个对话，不带提案对话历史：
 
-If you have compute resources to run experiments and want to build frontier RSI environments together, contact [yuetaili@uw.edu](mailto:yuetaili@uw.edu), [zhuofengli12345@gmail.com](mailto:zhuofengli12345@gmail.com), or [hanxinyang@berkeley.edu](mailto:hanxinyang@berkeley.edu).
-
-## 💥 Why OpenRSI Index?
-
-We are witnessing the dawn of a new era: AI is entering a recursive self-improvement loop. The central question is whether this loop can move beyond the best-known human-designed method and reliably extend the scientific frontier. Answering it requires careful measurement, and building that measurement is the purpose of this project.
-
-[OpenRSI Index](https://index.openrsi.foundation/index.html) is an ongoing effort to evaluate whether AI agents can drive genuine recursive self-improvement and advance scientific discovery through real-world research at scales ranging from a single node to thousands of GPUs—not merely reproduce existing results, sweep parameters, or succeed on toy-scale tasks.
-
-### Task taxonomy
-
-We are actively developing this project and welcome [contributions](https://github.com/OpenRSI-Foundation/OpenRSI-Index/blob/main/CONTRIBUTING.md) from the community. Tasks and execution logs are available in [rsi-tasks/](rsi-tasks/) and [OpenRSI-Index-Logs](https://huggingface.co/datasets/OpenRSI-Foundation/OpenRSI-Index-Logs), respectively. Open the [RSI Logs Viewer](https://index.openrsi.foundation/logs/) to explore results visually. See [Quick Start](assets/docs/quick-start.md) for instructions on running these tasks.
-
-The [SGLang-Omni task collection](https://github.com/OpenRSI-Foundation/OpenRSI-AI-Infra-Bench) (mounted at [`rsi-tasks/sglang-omni/`](rsi-tasks/sglang-omni/)) contains 12 native `rsi-harness` GPU serving optimization benchmarks across 8 open-weight TTS and ASR models, paired with official single-agent trajectories in [OpenRSI-Index-Logs/sglang-omni](https://huggingface.co/datasets/OpenRSI-Foundation/OpenRSI-Index-Logs/tree/main/sglang-omni).
-
-<details>
-<summary><strong>View tasks</strong></summary>
-
-| Task                                                                | Track          | Category      | Description                                                           | GPU requirement |
-| ------------------------------------------------------------------- | -------------- | ------------- | --------------------------------------------------------------------- | --------------- |
-| [`Qwen-122B-RL`](rsi-tasks/signature-tasks/post-training-qwen-122B-rl/) · [Research report](https://huggingface.co/datasets/OpenRSI-Foundation/OpenRSI-Index-Logs/tree/main/signature-tasks/post-training-qwen-122B-rl) | Signature Task | Post-training | Optimize a full post-training stack under one fixed budget.           | 256× H100       |
-| [`marin-optimizer-update-geometry`](rsi-tasks/signature-tasks/pre-training-optimizer-update-geometry/) | Signature Task | Pre-training  | Design a scale-general optimizer for the Marin scaling ladder.        | 256× H100       |
-| [`gpic-text-to-image`](rsi-tasks/signature-tasks/gpic_generation/) · [Research trajectories](https://huggingface.co/datasets/OpenRSI-Foundation/OpenRSI-Index-Logs/tree/main/signature-tasks/gpic-10m-autoresearch) | Signature Task | Vision        | Improve a shared PixelGen checkpoint on a fixed GPIC 10M subset.      | 4× H100 per job |
-| [`depth-width-allocation`](rsi-tasks/depth-width-allocation/)       | Public Task    | Pre-training  | Optimize decoder-width allocation under a fixed 200M training budget. | 8× H100         |
-| [`learnability-cot`](rsi-tasks/learnability-cot/)                   | Public Task    | Post-training | Adapt reasoning traces for small-model math SFT.                      | 4× H100         |
-| [`gemm-h100-refined`](rsi-tasks/gemm-h100-refined/)                 | Public Task    | MLSys         | Optimize an FP16 CUDA GEMM kernel for H100 throughput.                | 1× H100         |
-| [`liger-tied-ce`](rsi-tasks/liger-tied-ce/)                         | Public Task    | MLSys         | Optimize tied-weight fused cross-entropy for Qwen3 SFT.               | 2× H100         |
-| [`minference-sparse-prefill`](rsi-tasks/minference-sparse-prefill/) | Public Task    | MLSys         | Optimize Triton sparse-prefill attention on H100.                     | 1× H100         |
-| [`molmo2-pointing-refined`](rsi-tasks/molmo2-pointing-refined/)     | Public Task    | Vision        | Optimize Molmo2 video-pointing at inference time.                     | 1× H100         |
-| [`datacomp-small-filtering`](rsi-tasks/datacomp-small-filtering/)   | Public Task    | Vision        | Curate DataComp-small data for fixed ViT-B/32 training.               | 32× H100        |
-| [`ace-playbook-repair`](rsi-tasks/ace-playbook-repair/)             | Public Task    | Agents        | Inspect and repair ACE playbooks for a frozen Qwen model.            | 1× H100         |
-| [`molmoweb-interaction-context`](rsi-tasks/molmoweb-interaction-context/) | Public Task | Vision        | Allocate inference-time context for frozen MolmoWeb replay.          | 2× H100 minimum |
-| [`reasonir-difficulty-curriculum`](rsi-tasks/reasonir-difficulty-curriculum/) | Public Task | Post-training | Optimize a fixed-budget retrieval LoRA through difficulty-aware curricula. | 4× H100 minimum |
-| [`isaaclab-peginsert-reward-search`](rsi-tasks/isaaclab-peginsert-reward-search/) | Public Task | Robotics      | Design bounded reward graphs for fixed-budget Isaac Lab peg insertion. | 4× H100         |
-| [`kev-decision-architecture`](rsi-tasks/kev-decision-architecture/) | Public Task | Post-training | Redesign a 0.5B decision architecture under a fixed training corpus and recipe. | 2× H100 minimum |
-| [`cosyvoice3-dual-mode`](https://github.com/OpenRSI-Foundation/OpenRSI-AI-Infra-Bench/tree/main/tasks/cosyvoice3-dual-mode) | Public Task | MLSys | Optimize CosyVoice3 dual-mode TTS serving throughput on SGLang-Omni. | 1× H100 |
-| [`moss-tts-v1.5-dual-mode`](https://github.com/OpenRSI-Foundation/OpenRSI-AI-Infra-Bench/tree/main/tasks/moss-tts-v1.5-dual-mode) | Public Task | MLSys | Optimize MOSS-TTS-v1.5 dual-mode TTS serving throughput on SGLang-Omni. | 1× H100 |
-| [`fish-s2-pro-dual-mode`](https://github.com/OpenRSI-Foundation/OpenRSI-AI-Infra-Bench/tree/main/tasks/fish-s2-pro-dual-mode) | Public Task | MLSys | Optimize Fish Audio S2-Pro dual-mode TTS serving throughput on SGLang-Omni. | 1× H100 |
-| [`qwen3-tts-0.6b-dual-mode`](https://github.com/OpenRSI-Foundation/OpenRSI-AI-Infra-Bench/tree/main/tasks/qwen3-tts-0.6b-dual-mode) | Public Task | MLSys | Optimize Qwen3-TTS-0.6B dual-mode TTS serving throughput on SGLang-Omni. | 1× H100 |
-| [`qwen3-tts-1.7b-dual-mode`](https://github.com/OpenRSI-Foundation/OpenRSI-AI-Infra-Bench/tree/main/tasks/qwen3-tts-1.7b-dual-mode) | Public Task | MLSys | Optimize Qwen3-TTS-1.7B dual-mode TTS serving throughput on SGLang-Omni. | 1× H100 |
-| [`ming3-tts-0.5b-nonstream`](https://github.com/OpenRSI-Foundation/OpenRSI-AI-Infra-Bench/tree/main/tasks/ming3-tts-0.5b-nonstream) | Public Task | MLSys | Optimize Ming-3.0-TTS-0.5B non-streaming serving throughput on SGLang-Omni. | 1× H100 |
-| [`ming3-tts-0.5b-streaming`](https://github.com/OpenRSI-Foundation/OpenRSI-AI-Infra-Bench/tree/main/tasks/ming3-tts-0.5b-streaming) | Public Task | MLSys | Optimize Ming-3.0-TTS-0.5B streaming serving throughput on SGLang-Omni. | 1× H200 / H100 |
-| [`ming3-tts-tiny-nonstream`](https://github.com/OpenRSI-Foundation/OpenRSI-AI-Infra-Bench/tree/main/tasks/ming3-tts-tiny-nonstream) | Public Task | MLSys | Optimize Ming-3.0-TTS-Tiny non-streaming serving throughput on SGLang-Omni. | 1× H100 |
-| [`ming3-tts-tiny-streaming`](https://github.com/OpenRSI-Foundation/OpenRSI-AI-Infra-Bench/tree/main/tasks/ming3-tts-tiny-streaming) | Public Task | MLSys | Optimize Ming-3.0-TTS-Tiny streaming serving throughput on SGLang-Omni. | 1× H200 / H100 |
-| [`qwen3-asr-1.7b-dual-mode`](https://github.com/OpenRSI-Foundation/OpenRSI-AI-Infra-Bench/tree/main/tasks/qwen3-asr-1.7b-dual-mode) | Public Task | MLSys | Optimize Qwen3-ASR-1.7B bilingual SSE & HTTP serving throughput on SGLang-Omni. | 1× H100 |
-| [`whisper-large-v3-dual-mode`](https://github.com/OpenRSI-Foundation/OpenRSI-AI-Infra-Bench/tree/main/tasks/whisper-large-v3-dual-mode) | Public Task | MLSys | Optimize Whisper-large-v3 bilingual SSE & HTTP serving throughput on SGLang-Omni. | 1× H100 |
-| [`moss-transcribe-diarize-dual-mode`](https://github.com/OpenRSI-Foundation/OpenRSI-AI-Infra-Bench/tree/main/tasks/moss-transcribe-diarize-dual-mode) | Public Task | MLSys | Optimize MOSS-Transcribe-Diarize bilingual SSE & HTTP throughput on SGLang-Omni. | 1× H100 |
-
-</details>
-
-### How an evaluation works: RSI-Harness
-
-[RSI-Harness](RSI-Harness/) powers OpenRSI Index for ultra-long-horizon RSI runs, natively supporting [Harbor-format tasks](rsi-tasks) from single-node local Docker to multi-node clusters. See its [README](RSI-Harness/README.md) to run a task.
-
-For local research without GitHub Discussions, see the [Local research workflow](local-research/README.md). It explains the proposal, independent review, and task-authoring conversations, followed by a command-line build, validation, and RSI-Harness run.
-
-## 🤝 Contributors
-
-We are still actively expanding the team. We really appreciate the efforts of all our excellent members.
-
-<table>
-  <tr>
-    <th colspan="4" align="left">PROJECT INITIATORS</th>
-  </tr>
-  <tr>
-    <td width="25%" valign="top"><strong><a href="https://yuetl9.github.io/">Yuetai Li</a></strong><br><a href="mailto:yuetaili@uw.edu">yuetaili@uw.edu</a></td>
-    <td width="25%" valign="top"><strong><a href="https://zhuofeng-li.github.io/">Zhuofeng Li</a></strong><br><a href="mailto:zhuofengli12345@gmail.com">zhuofengli12345@gmail.com</a></td>
-    <td width="25%" valign="top"><strong><a href="https://yichenfeng.me/">Yichen Feng</a></strong><br><a href="mailto:yfeng42@uw.edu">yfeng42@uw.edu</a></td>
-    <td width="25%" valign="top"><strong><a href="https://davidhanx.github.io/">Xinyang Han</a></strong><br><a href="mailto:hanxinyang@berkeley.edu">hanxinyang@berkeley.edu</a></td>
-  </tr>
-  <tr>
-    <td width="25%" valign="top"><strong><a href="https://wenhaochai.com/">Wenhao Chai</a></strong><br><a href="mailto:wenhao.chai@princeton.edu">wenhao.chai@princeton.edu</a></td>
-    <td width="25%" valign="top"><strong><a href="https://noviscl.github.io/">Chenglei Si</a></strong><br><a href="mailto:sichenglei1125@gmail.com">sichenglei1125@gmail.com</a></td>
-    <td width="25%"></td>
-    <td width="25%"></td>
-  </tr>
-  <tr>
-    <th colspan="4" align="left">ORGANIZERS (in alphabetical order)</th>
-  </tr>
-  <tr>
-    <td width="25%" valign="top"><strong><a href="https://nuojohnchen.github.io/">Nuo Chen</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://www.zhcui.com/">Zhi-Hao Cui</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://scholar.google.com/citations?user=E1GCDXUAAAAJ">Shangding Gu</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://rilynhan.com/">Rilyn Han</a></strong></td>
-  </tr>
-  <tr>
-    <td width="25%" valign="top"><strong><a href="https://dblp.org/pid/270/4119.html">Zhengyu Hu</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://hanghuacs.notion.site/">Hang Hua</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://howiehwong.github.io/">Yue Huang</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://fqjiang.work/">Fengqing Jiang</a></strong></td>
-  </tr>
-  <tr>
-    <td width="25%" valign="top"><strong><a href="https://caralinotes.com/">Cara Li</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://hanchenli.github.io/">Hanchen Li</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://www.linkedin.com/in/shujia-liang/">Shujia Liang</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://scholar.google.com/citations?user=Dj9s3oEAAAAJ">Xiang Liu</a></strong></td>
-  </tr>
-  <tr>
-    <td width="25%" valign="top"><strong><a href="https://lupantech.github.io/">Pan Lu</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://bohanlyu.com/">Bohan Lyu</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://zixianma.github.io/">Zixian Ma</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://joyemang33.github.io/">Qiuyang Mang</a></strong></td>
-  </tr>
-  <tr>
-    <td width="25%" valign="top"><strong><a href="https://rulinshao.github.io/">Rulin Shao</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://huggingface.co/venkat-srinivasan-nvidia">Venkat Srinivasan</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://sunyiyou.github.io/">Yiyou Sun</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://scholar.google.com/citations?user=cIRPBeYAAAAJ&amp;hl=en">Guan Wang</a></strong></td>
-  </tr>
-  <tr>
-    <td width="25%" valign="top"><strong><a href="https://www.linkedin.com/in/nwangucla/">Ning Wang</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://x.com/yangzhen04">Yangzhen Wu</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://hsaest.github.io/">Jian Xie</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://github.com/bri25yu">Brian Yu</a></strong></td>
-  </tr>
-  <tr>
-    <td width="25%" valign="top"><strong><a href="https://mitibm.mit.edu/people/gaoyuan-zhang/">Gaoyuan Zhang</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://alex-q-z.github.io/">Qizheng Zhang</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://openreview.net/profile?id=~Weichen_Zhang8">Weichen Zhang</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://scholar.google.com/citations?user=6kkyR1wAAAAJ">Kaiyuan Zheng</a></strong></td>
-  </tr>
-  <tr>
-    <th colspan="4" align="left">ADVISORS (in alphabetical order)</th>
-  </tr>
-  <tr>
-    <td width="25%" valign="top"><strong><a href="https://wenhuchen.github.io/">Wenhu Chen</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://people.eecs.berkeley.edu/~akcheung/">Alvin Cheung</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://yejinc.github.io/">Yejin Choi</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://www.microsoft.com/en-us/research/people/jfgao/">Jianfeng Gao</a></strong></td>
-  </tr>
-  <tr>
-    <td width="25%" valign="top"><strong><a href="https://homes.cs.washington.edu/~hannaneh/">Hannaneh Hajishirzi</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://koh.pw/">Pang Wei Koh</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://ranjaykrishna.com/">Ranjay Krishna</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://hanqinglu.github.io/">Hanqing Lu</a></strong></td>
-  </tr>
-  <tr>
-    <td width="25%" valign="top"><strong><a href="https://www.cs.princeton.edu/~karthikn/">Karthik Narasimhan</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://arsenalfc.stanford.edu/kunle/">Kunle Olukotun</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://rpand002.github.io/">Rameswar Panda</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://people.ece.uw.edu/radha/">Radha Poovendran</a></strong></td>
-  </tr>
-  <tr>
-    <td width="25%" valign="top"><strong><a href="https://dawnsong.io/">Dawn Song</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://ysu1989.github.io/">Yu Su</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://u.osu.edu/ihudas/">Huan Sun</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://cs.stanford.edu/~diyiy/">Diyi Yang</a></strong></td>
-  </tr>
-  <tr>
-    <td width="25%" valign="top"><strong><a href="https://faculty.ucmerced.edu/mhyang/">Ming‑Hsuan Yang</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://xiangyue9607.github.io/">Xiang Yue</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://www.linkedin.com/in/jian-zhang-10383a98/">Jian Zhang</a></strong></td>
-    <td width="25%" valign="top"><strong><a href="https://yuzhimanhua.github.io/">Yu Zhang</a></strong></td>
-  </tr>
-  <tr>
-    <td width="25%" valign="top"><strong><a href="https://homes.cs.washington.edu/~lsz/">Luke Zettlemoyer</a></strong></td>
-    <td width="25%"></td>
-    <td width="25%"></td>
-    <td width="25%"></td>
-  </tr>
-  <tr>
-    <th colspan="4" align="left">TASK CONTRIBUTORS</th>
-  </tr>
-  <tr>
-    <td colspan="4">Coming soon.</td>
-  </tr>
-</table>
-
-## Citation
-
-If you use OpenRSI Index in your research, please cite:
-
-```bibtex
-@misc{openrsi2026index,
-  title        = {{OpenRSI Index}},
-  author       = {{OpenRSI Foundation}},
-  year         = {2026},
-  howpublished = {\url{https://github.com/OpenRSI-Foundation/OpenRSI-Index}},
-  note         = {Accessed: 2026-10-21}
-}
+```text
+请定位这个 OpenRSI Local Research checkout，阅读 local-research/PROMPTS.md 的「2. 独立评审」。独立评审 <实验目录>/proposal.toml，将结论和理由写到 <实验目录>/review-notes.md。不要改提案，也不要替我批准；等我确认，再记录决定。
 ```
+
+### 3. 构建与验收
+
+确定通过后，再开一个对话：
+
+```text
+请定位这个 OpenRSI Local Research checkout，阅读 local-research/PROMPTS.md 的「3. 构建与验收」。先确认 <实验目录> 存在对当前提案的批准，再按简报构建 Harbor 任务，打包并用 RSI-Harness 验证正负对照。报告实测结果；不要发布，也不要启动正式研究。
+```
+
+### 4. 正式运行
+
+两个对照都通过后，再执行：
+
+```sh
+uv run --project RSI-Harness python local-research/research.py run '<实验目录>' --agent codex
+```
+
+优化 Agent 由 Harness 启动，不用另开对话。CPU 示例、Docker 和模型配置、GPU 参数以及实验产物位置都在[完整操作指南](local-research/README.md)。如果你自己做评审，可以跳过第二个对话，但仍需用指南中的命令记录决定。
+
+## 仓库结构
+
+- [`local-research/`](local-research/README.md)：本地命令、对话 Prompt、CPU 示例和测试。
+- [`RSI-Harness/`](RSI-Harness/)：保留原评测引擎，负责容器、Agent、提交、评分和结果。
+- [`rsi-tasks/`](rsi-tasks/)：保留原公开题库。你的实验和运行记录留在各自的本地目录。
+- [原版 OpenRSI Index 介绍](README.upstream.md)和[公开贡献流程](CONTRIBUTING.md)：供参考，不是本地使用的前置步骤。

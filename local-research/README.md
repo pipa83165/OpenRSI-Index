@@ -9,6 +9,9 @@ work.
 
 ## Which conversations should I open?
 
+Copy the three launch prompts from the [repository homepage](../README.md).
+Their detailed role instructions are in [PROMPTS.md](PROMPTS.md).
+
 Normally open **three separate conversations**. If you review the proposal
 yourself, open only the first and third.
 
