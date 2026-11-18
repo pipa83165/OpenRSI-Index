@@ -7,6 +7,59 @@ The wrapper manages local approval and validation records. The included
 agents, and records results. Neither the wrapper nor an agent approves its own
 work.
 
+## Which conversations should I open?
+
+Normally open **three separate conversations**. If you review the proposal
+yourself, open only the first and third.
+
+| Conversation | Give it | Take away |
+| --- | --- | --- |
+| Proposal | Your research question, baseline, and constraints | A filled-in `proposal.toml`. If the review asks for changes, return here. |
+| Independent review | The proposal, without the previous conversation | Review notes and an approve/revise recommendation. Record your decision with `review`. |
+| Task authoring | The brief printed by `author`, plus the Harbor task-creation skill | A Harbor template and a separate negative control. This conversation may see the formal tests and reference solution. |
+
+Then run `build → validate → run` in the terminal. **Do not open a fourth
+conversation for optimization:** `run` starts the optimizer through
+RSI-Harness without carrying over the task author's conversation.
+
+## Where files live
+
+This workflow adds `local-research/` and an entry in the root README. It does
+not replace the existing Harness, published tasks, or GitHub contribution flow.
+
+```text
+OpenRSI-Index/
+├── RSI-Harness/                           # unchanged runtime
+├── rsi-tasks/                             # unchanged published tasks
+├── .agents/skills/ and .github/workflows/  # unchanged contribution flow
+└── local-research/                        # new local workflow
+    ├── README.md
+    ├── research.py                        # proposal through run
+    ├── harness.py                         # adapter to the existing runtime
+    ├── test_*.py
+    └── examples/cpu-sequence/             # example proposal, template, negative control
+```
+
+Each experiment has a separate directory of your choosing. For example,
+`./my-research/` accumulates these files as you run the commands:
+
+```text
+my-research/
+├── proposal.toml          # your experiment design
+├── review.json            # decision and notes bound to that proposal
+├── build/
+│   ├── task/              # packaged Harbor task
+│   ├── negative-solve.sh  # kept outside the task package
+│   └── manifest.json      # locked input hashes
+├── validation.json        # latest validation status for this build
+├── validation-runs/       # positive and negative control evidence
+├── research-runs/         # optimizer runs and native Harness logs
+└── .harness-data/         # local Harness runtime data
+```
+
+These are local workspace outputs, not additions to the published
+`rsi-tasks/` catalog. Keep private experiment files out of commits.
+
 ## Setup
 
 Run the commands below from the repository root. Drafting, recording a review,
